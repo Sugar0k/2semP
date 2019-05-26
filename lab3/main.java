@@ -56,7 +56,7 @@ public class main {
         }
         if (!firm2.addOffice(new Office (13, "Кузнецов 10", 10, 2))) {
             System.out.printf("В фирму %s добавить офис не удалось:\n", firm2.getTitle());
-            System.out.println("превышен лимиn");
+            System.out.println("превышен лимит");
         }
         System.out.println("\n" + firm1.getTitle());
         firm1.printListOffice();

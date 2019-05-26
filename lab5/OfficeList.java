@@ -1,6 +1,6 @@
-package lab4;
+package lab5;
 
-public class OfficeList {
+public class OfficeList implements NewList {
     private final static String OFFICE_LIST_FORMAT_STRING = "Офис: %s, кол-во элементов: %s";
 
     private Office data;
@@ -23,20 +23,6 @@ public class OfficeList {
         data = office;
         head = null;
     }
-
-//    OfficeList (OfficeList list){
-//        list.data = data;
-//        if (head == null) {
-//            list.head = null;
-//            list.size = size;
-//        } else {
-//            OfficeList el = head;
-//            while (el.head != null) {
-//                list.
-//                list.head = new OfficeList(el.data);
-//            }
-//        }
-//    }
 
     public void setTitle(String location) {
         data.setLocation(location);
@@ -103,7 +89,7 @@ public class OfficeList {
         return avg / num;
     }
 
-    public OfficeList aboveAvgArea() {
+    public OfficeList overAvgArea() {
         double avg = avgArea();
         OfficeList newHead = new OfficeList(String.format("Офисы, с площадью больше средней %s: ", avg));
         OfficeList el = head;
@@ -125,13 +111,13 @@ public class OfficeList {
         }
         return newHead;
     }
-    public void putStudList(){
+    public void print(){
         System.out.println(data.getLocation());
-        System.out.printf("%-11s%-10s%-18s%-13s%-10s\n", "Название", "ID", "Адрес", "Площадь", "Кол-во комнта");
+        System.out.printf("%-6s %-10s %-18s %-12s %s\n", "Номер", "ID офиса", "Адрес", "Площадь", "Кол-во комнат");
         OfficeList el = head;
         int i = 1;
         while (el != null){
-            System.out.printf("  %-7d  %-8s  %-16s  %-12s %-10s\n", i, el.data.getId(), el.data.getLocation(), el.data.getArea(), el.data.getRooms());
+            System.out.printf("%-6s %-10s %-18s %-12.4f %s\n", i, el.data.getId(), el.data.getLocation(), el.data.getArea(), el.data.getRooms());
             el = el.head;
             i++;
         }
@@ -163,7 +149,7 @@ public class OfficeList {
                 }
                 el1 = el1.head;
             }
-            newHead.putStudList();
+            newHead.print();
             newHead.addOffice(new Office(of));
             of.setArea(0);
             el = el.head;
@@ -173,93 +159,22 @@ public class OfficeList {
 
     public void sort(){
         if (size == 0 || size == 1 ) return;
-        Office of1 = head.data, of2 = head.head.data;
+        OfficeList l1 = head;
         for(int i = 0; i < size - 1; i++){
+            OfficeList l2 = l1;
             for(int j = i + 1; j < size; j++){
+                l2 = l2.head;
+                if (l1.data.getArea() < l2.data.getArea()){
+                    Office temp = l1.data;
+                    l1.data = l2.data;
+                    l2.data = temp;
 
+                }
             }
+            l1 = l1.head;
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

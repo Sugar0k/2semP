@@ -43,34 +43,36 @@ public class main {
             j++;
             firm2.addOffice(new Office(id, title, area, rooms));
         }*/
-
-        System.out.println ("Сформированы следующие листы:");
-        System.out.printf ("%s,\n%s\n\n", arr1,arr2);
+//
+//        System.out.println ("Сформированы следующие листы:");
+//        System.out.printf ("%s,\n%s\n\n", arr1,arr2);
+//        arr1.putStudList();
+//        arr2.putStudList();
+//
+//        if (!arr1.addOffice(new Office (13, "Садовая 10", 100, 2))) {
+//            System.out.printf("В фирму %s добавить офис не удалось:\n", arr1.getTitle());
+//            System.out.println("нарушена уникальность ключа.");
+//        }
+//        arr1.putStudList();
+//        arr1.aboveAvgArea().putStudList();
+//        arr1.betweenArea(20,100).putStudList();
+//        arr1.delOffice(228);
+//        System.out.println("После удаления офиса:");
+//        arr1.putStudList();
+//        arr2.putStudList();
+//        arr2.aboveAvgArea().putStudList();
+//        arr2.betweenArea(10,30).putStudList();
+//        arr2.delOffice(21);
+//        System.out.println("После удаления офиса:");
+//        arr2.putStudList();
+//        System.out.println("Проверка наличия офиса");
+//        int n = 222222222;
+//        Office of = arr1.getOffice(n);
+//        System.out.printf ("В листе %s:\n",arr1.getTitle());
+//        if (of == null) System.out.printf ("Нет офиса с id %d\n",n);
+//        else System.out.println(of);
         arr1.putStudList();
-        arr2.putStudList();
-
-        if (!arr1.addOffice(new Office (13, "Садовая 10", 100, 2))) {
-            System.out.printf("В фирму %s добавить офис не удалось:\n", arr1.getTitle());
-            System.out.println("нарушена уникальность ключа.");
-        }
-        arr1.putStudList();
-        arr1.aboveAvgArea().putStudList();
-        arr1.betweenArea(20,100).putStudList();
-        arr1.delOffice(228);
-        System.out.println("После удаления офиса:");
-        arr1.putStudList();
-        arr2.putStudList();
-        arr2.aboveAvgArea().putStudList();
-        arr2.betweenArea(10,30).putStudList();
-        arr2.delOffice(21);
-        System.out.println("После удаления офиса:");
-        arr2.putStudList();
-        System.out.println("Проверка наличия офиса");
-        int n = 222222222;
-        Office of = arr1.getOffice(n);
-        System.out.printf ("В листе %s:\n",arr1.getTitle());
-        if (of == null) System.out.printf ("Нет офиса с id %d\n",n);
-        else System.out.println(of);
+        //arr1.sort().putStudList();
     }
 }
 
